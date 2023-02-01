@@ -1,5 +1,18 @@
+import re
+from os import environ
+
+id_pattern = re.compile(r'^.\d+$')
+def is_enabled(value, default):
+    if value.lower() in ["true", "yes", "1", "enable", "y"]:
+        return True
+    elif value.lower() in ["false", "no", "0", "disable", "n"]:
+        return False
+    else:
+        return default
+
 class script(object):
-   START_TXT = environ.get("START_TXT", '''Hello {},
+    HOME_BUTTONURL_UPDATES = environ.get("HOME_BUTTONURL_UPDATES", 'https://clicksfly.com/ref/LazyDeveloperr')
+    START_TXT = environ.get("START_TXT", '''Hello {},
 Myself <a href=https://t.me/{}>{}</a>,\n\nTrust me ! I can't even imagine how super-fast i can drive your Database channel \n\nAre you ready for Long Drive Baby...🤪''')
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝙼𝚈 𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
@@ -9,7 +22,7 @@ Myself <a href=https://t.me/{}>{}</a>,\n\nTrust me ! I can't even imagine how su
 ✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
 ✯ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴: 𝙼𝙾𝙽𝙶𝙾 𝙳𝙱
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: KOYEB
-✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v2.0.1 [ monster ]"""
+✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v2.0.1 [ 🇷‌🇴‌🇱‌🇪‌🇽‌ ]"""
     SOURCE_TXT = """<b>🇷‌🇴‌🇱‌🇪‌🇽‌ 🇮‌🇸‌ 🇦‌🇳‌ 🇴‌🇵‌🇪‌🇳‌ 🇸‌🇴‌🇺‌🇷‌🇨‌🇪‌ 🇵‌🇷‌🇴‌🇯‌🇪‌🇨‌🇹‌</b>
 You can easily get its source code from github - <a href='https://t.me/moviehub_plus'>🇷‌🇴‌🇱‌🇪‌🇽‌</a>"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
